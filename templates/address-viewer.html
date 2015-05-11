@@ -1,0 +1,19 @@
+﻿{{#with address}}
+{{address1}}
+<br />
+{{#if address2}}
+{{address2}}
+<br />
+{{/if}}
+{{#if city() && state()}}
+{{city}}, {{state().toUpperCase()}}&nbsp;
+{{/if}}
+{{#if !city() && state()}}
+{{state().toUpperCase()}}&nbsp;
+{{/if}}
+{{#if city() && !state()}}
+{{city}}&nbsp;
+{{/if}}
+{{postalCode}} &nbsp;
+{{#if $parent.showCountry}}{{country}}{{/if}}
+{{/#with}}
