@@ -10,24 +10,22 @@
 ], factory);
     } else {
         // Browser globals
-        factory(ko, _, Builder, Viewer, Address);
+        factory(ko, $, Builder, Viewer, Address);
     }
-}(this, function(ko, $) {
+}(this, function(ko, $, Builder, Viewer, Address) {
     ko.punches.enableAll();
 		ko.punches.interpolationMarkup.enable();
 		ko.punches.attributeInterpolationMarkup.enable();
 
-		var instanceName;
-
 		ko.bindingHandlers.addressBuilder = {
 			init: function (element) {
-				instanceName = _.uniqueId("addy-build--");
+				element.instanceName = _.uniqueId("addy-build--");
 				return { controlsDescendantBindings: true };
 			},
 			update: function (element, valueAccessor, allBindings) {
 				var data = {};
 				data.address = valueAccessor();
-				data.instanceName = instanceName;
+				data.instanceName = element.instanceName;
 				data.displayOptions = ko.unwrap(allBindings.get('displayOptions'));
 				data.validate = ko.unwrap(allBindings.get('validate'));
 				var model = new Builder(data);
@@ -37,13 +35,13 @@
 
 		ko.bindingHandlers.addressViewer = {
 			init: function (element) {
-				instanceName = _.uniqueId("addy-view--");
+				element.instanceName = _.uniqueId("addy-view--");
 				return { controlsDescendantBindings: true };
 			},
 			update: function (element, valueAccessor, allBindings) {
 				var data = {};
 				data.address = valueAccessor();
-				data.instanceName = instanceName;
+				data.instanceName = element.instanceName;
 				data.displayOptions = ko.unwrap(allBindings.get('displayOptions'));
 				var template = ko.unwrap(allBindings.get('template')) || "viewer";
 				var model = new Viewer(data);

@@ -3,20 +3,27 @@
 <head>
 	<title>Address Builder Example</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<script data-main="config.js" src="../../bower_components/requirejs/require.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+	<script data-main="config.js" src="../bower_components/requirejs/require.js" type="text/javascript"></script>
 
 </head>
 <body>
 	<div class="container">
 		<h1>Address Builder Example</h1>
+		<h5>(start changing me to update the viewer)</h5>
 		<div class="well" data-bind="addressBuilder: address">
 		</div>
 	</div>
 
 	<div class="container">
-		<h1>Another Instance With Working Labels</h1>
-		<div class="well" data-bind="addressBuilder: address">
+		<h1>Address Viewer Example</h1> 
+		<div class="well" data-bind="addressViewer: address, displayOptions: {showCountryOnlyIfInternational: false}">
+		</div>
+	</div>
+	
+	<div class="container">
+		<h1>Address Extender Example</h1> 
+		<div class="well" data-bind="text: address2.formatted">
 		</div>
 	</div>
 </body>

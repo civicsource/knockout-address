@@ -12,21 +12,21 @@
 <span class="addy-view__line3__container">
 	{{#if city() && state()}}
 	<span class="addy-view__city-state__container">
-		{{city}}, {{state().toUpperCase()}}&nbsp;
+		{{city}}, {{state().toUpperCase()}}
 	</span>
 	{{/if}}
 	{{#if !city() && state()}}
 	<span class="addy-view__state__container">
-		{{state().toUpperCase()}}&nbsp;
+		{{state().toUpperCase()}}
 	</span>
 	{{/if}}
 	{{#if city() && !state()}}
 	<span class="addy-view__city__container">
-		{{city}}&nbsp;
+		{{city}}
 	</span>
 	{{/if}}
 	<span class="addy-view__postal__container">
-		{{postalCode}} &nbsp;
+		{{postalCode}}
 	</span>
 	{{#if $parent.showCountry}}
 	<span class="addy-view__country__container">
