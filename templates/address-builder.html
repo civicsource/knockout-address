@@ -29,7 +29,7 @@
                        optionsText: 'name',
 					   optionsValue: 'abbreviation',
                        value: address().state,
-                       optionsCaption: 'Choose...'" class="form-control" id="{{$parent.instanceName}}__state"></select>
+                       optionsCaption: 'Choose...'" class="form-control" id="{{instanceName}}__state"></select>
 			</div>
 
 			<label class="col-sm-2 control-label" for="{{$parent.instanceName}}__postal-code">ZIP</label>
@@ -46,7 +46,7 @@
                        optionsText: 'name',
 					   optionsValue: 'code',
                        value: address().country,
-                       optionsCaption: 'Choose...'" class="form-control" id="{{$parent.instanceName}}__country"></select>
+                       optionsCaption: 'Choose...'" class="form-control" id="{{instanceName}}__country"></select>
 			</div>
 		</div>
 		{{/if}}
