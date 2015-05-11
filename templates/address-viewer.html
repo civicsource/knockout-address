@@ -1,19 +1,37 @@
 ﻿{{#with address}}
-{{address1}}
+<span class="addy-view__line1__container">
+	{{address1}}
+</span>
 <br />
 {{#if address2}}
-{{address2}}
+<span class="addy-view__line2__container">
+	{{address2}}
+</span>
 <br />
 {{/if}}
-{{#if city() && state()}}
-{{city}}, {{state().toUpperCase()}}&nbsp;
-{{/if}}
-{{#if !city() && state()}}
-{{state().toUpperCase()}}&nbsp;
-{{/if}}
-{{#if city() && !state()}}
-{{city}}&nbsp;
-{{/if}}
-{{postalCode}} &nbsp;
-{{#if $parent.showCountry}}{{country}}{{/if}}
+<span class="addy-view__line3__container">
+	{{#if city() && state()}}
+	<span class="addy-view__city-state__container">
+		{{city}}, {{state().toUpperCase()}}&nbsp;
+	</span>
+	{{/if}}
+	{{#if !city() && state()}}
+	<span class="addy-view__state__container">
+		{{state().toUpperCase()}}&nbsp;
+	</span>
+	{{/if}}
+	{{#if city() && !state()}}
+	<span class="addy-view__city__container">
+		{{city}}&nbsp;
+	</span>
+	{{/if}}
+	<span class="addy-view__postal__container">
+		{{postalCode}} &nbsp;
+	</span>
+	{{#if $parent.showCountry}}
+	<span class="addy-view__country__container">
+		{{country}}
+	</span>
+	{{/if}}
+</span>
 {{/#with}}
