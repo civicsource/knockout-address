@@ -1,12 +1,19 @@
-﻿define(["knockout", "lodash", "./builder", "./viewer", "./address",
-	"knockout.punches",
-	"template!./templates/address-builder-index.html!address-index",
-	"template!./templates/address-builder.html!address-builder",
-	"template!./templates/address-viewer.html!address-viewer",
-],
-	function (ko, _, Builder, Viewer, Address) {
-
-		ko.punches.enableAll();
+﻿
+(function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(["knockout", "lodash", "./builder", "./viewer", "./address",
+				"knockout.punches",
+				"template!./templates/address-builder-index.html!address-index",
+				"template!./templates/address-builder.html!address-builder",
+				"template!./templates/address-viewer.html!address-viewer",
+], factory);
+    } else {
+        // Browser globals
+        factory(ko, _, Builder, Viewer, Address);
+    }
+}(this, function(ko, $) {
+    ko.punches.enableAll();
 		ko.punches.interpolationMarkup.enable();
 		ko.punches.attributeInterpolationMarkup.enable();
 
@@ -64,4 +71,4 @@
 
 		ko.virtualElements.allowedBindings.addressBuilder = true;
 		ko.virtualElements.allowedBindings.addressViewer = true;
-	});
+}));
