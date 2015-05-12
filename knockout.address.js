@@ -53,7 +53,7 @@
 			var validate = (defaultValue && defaultValue.validate === true) || false;
 			var result = ko.computed({
 				read: function () {
-					return ko.unwrap(target) instanceof Address ? target : target(new Address({}, null, null, validate));
+					return ko.unwrap(target) instanceof Address ? target : target(new Address(ko.unwrap(target), null, null, validate));
 				},
 				write: function (value) {
 					target(new Address(value, null, null, validate));
