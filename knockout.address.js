@@ -10,9 +10,9 @@
 ], factory);
     } else {
         // Browser globals
-        factory(ko, $, Builder, Viewer, Address);
+        factory(ko, _, Builder, Viewer, Address);
     }
-}(this, function(ko, $, Builder, Viewer, Address) {
+}(this, function(ko, _, Builder, Viewer, Address) {
     ko.punches.enableAll();
 		ko.punches.interpolationMarkup.enable();
 		ko.punches.attributeInterpolationMarkup.enable();
