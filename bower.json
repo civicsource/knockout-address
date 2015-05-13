@@ -23,7 +23,6 @@
   ],
   "dependencies": {
     "knockout": "~3.3.0",
-    "knockout.validation": "~1.0.2",
     "knockout.punches": "~0.5.1",
     "lodash": "~3.8.0",
     "jquery": "~2.1.4",
