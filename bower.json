@@ -1,6 +1,6 @@
 {
   "name": "knockout-address",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/civicsource/knockout-address",
   "authors": [
     "Archon Information Systems IT@archoninfosys.com"
@@ -27,7 +27,7 @@
     "lodash": "~3.8.0",
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.4",
-    "knockout-require-templates": "~1.0.1",
+    "knockout-require-templates": "~1.0.2",
     "require": "*"
   }
 }
