@@ -205,6 +205,18 @@
 			"abbreviation": "TX"
 		},
 		{
+			"name": "U.S. Armed Forces - Americas",
+			"abbreviation": "AA"
+		},
+		{
+			"name": "U.S. Armed Forces - Europe",
+			"abbreviation": "AE"
+		},
+		{
+			"name": "U.S. Armed Forces - Pacific",
+			"abbreviation": "AP"
+		},
+		{
 			"name": "Utah",
 			"abbreviation": "UT"
 		},
