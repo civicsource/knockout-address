@@ -4,9 +4,9 @@
         // AMD. Register as an anonymous module.
         define(["knockout", "lodash", "./builder", "./viewer", "./address",
 				"knockout.punches",
-				"knockout-template?name=address-index!./templates/address-builder-index.html",
-				"knockout-template?name=address-builder!./templates/address-builder.html",
-				"knockout-template?name=address-viewer!./templates/address-viewer.html",
+				"knockout-template?name=address-index!html!./templates/address-builder-index.html",
+				"knockout-template?name=address-builder!html!./templates/address-builder.html",
+				"knockout-template?name=address-viewer!html!./templates/address-viewer.html",
 ], factory);
     } else {
         // Browser globals
