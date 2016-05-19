@@ -1,6 +1,6 @@
-﻿define(['knockout', 'lodash', './data',
+﻿define(['jquery','knockout', 'lodash', './data',
 'knockout.validation'],
-function (ko, _, componentData) {
+function ($, ko, _, componentData) {
 	function Address(data, states, countries, validate) {
 
 		data = ko.unwrap(data);
