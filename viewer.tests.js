@@ -1,6 +1,6 @@
-﻿define(["knockout", "jquery", "./viewer",
+﻿define(["knockout", "jquery-extend", "./viewer",
 	"mock-ajax"],
-	function (ko, $, ViewModel) {
+	function (ko, $extend, ViewModel) {
 
 		describe("Address Viewer ViewModel", function () {
 
@@ -45,7 +45,7 @@
 
 			describe("When creating a new model and country is not US", function () {
 				beforeEach(function () {
-					model = new ViewModel({ address: $.extend({}, data, { country: "BG" }), instanceName: data.instanceName });
+					model = new ViewModel({ address: $extend({}, data, { country: "BG" }), instanceName: data.instanceName });
 				}, this);
 
 				it("should show country", function () {
@@ -56,7 +56,7 @@
 
 			describe("When creating a new model with showCountryOnlyIfInternational is false and country is not US", function () {
 				beforeEach(function () {
-					model = new ViewModel({ address: $.extend({}, data, { country: "BG" }), instanceName: data.instanceName, displayOptions: { showCountryOnlyIfInternational: false } });
+					model = new ViewModel({ address: $extend({}, data, { country: "BG" }), instanceName: data.instanceName, displayOptions: { showCountryOnlyIfInternational: false } });
 				}, this);
 
 				it("should show country", function () {

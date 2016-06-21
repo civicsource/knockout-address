@@ -1,6 +1,6 @@
-﻿define(["knockout", "./address", "jquery", "./builder",
+﻿define(["knockout", "./address", "jquery-extend", "./builder",
 	"mock-ajax"],
-	function (ko, Address, $, Model) {
+	function (ko, Address, $extend, Model) {
 
 		describe("Address Builder Address", function () {
 
@@ -14,7 +14,7 @@
 				city: "New Orleans",
 				state: "LA",
 				postalCode: "70123",
-				country: "CA",
+				country: "CA"
 			};
 
 			var data2 = {
@@ -23,7 +23,7 @@
 				city: ko.observable("New Orleans"),
 				state: ko.observable("LA"),
 				postalCode: ko.observable("70123"),
-				country: ko.observable("CA"),
+				country: ko.observable("CA")
 			};
 
 			var data3 = {
@@ -32,7 +32,7 @@
 				city: ko.observable("New Orleans"),
 				state: ko.observable("LA"),
 				postalCode: ko.observable("70123"),
-				country: ko.observable(""),
+				country: ko.observable("")
 			};
 
 			var model;
@@ -101,7 +101,7 @@
 
 			describe("When creating a new address w/ state and country as a description instead of a code", function () {
 				beforeEach(function () {
-					model = new Address($.extend({}, data1, { state: "Louisiana", country: "United States" }), states, countries);
+					model = new Address($extend({}, data1, { state: "Louisiana", country: "United States" }), states, countries);
 				}, this);
 
 				describe("", function () {
@@ -112,7 +112,7 @@
 
 			describe("When creating a new address a state and country as objects", function () {
 				beforeEach(function () {
-					model = new Address($.extend({}, data1, { state: { value: "WA", description: "Washington" }, country: { value: "US", description: "United States" } }), states, countries);
+					model = new Address($extend({}, data1, { state: { value: "WA", description: "Washington" }, country: { value: "US", description: "United States" } }), states, countries);
 				}, this);
 
 				describe("", function () {
@@ -123,7 +123,7 @@
 
 			describe("When creating a new address a state and country as objects with both values as description", function () {
 				beforeEach(function () {
-					model = new Address($.extend({}, data1, { state: { value: "Illinois", description: "Illinois" }, country: { value: "United States", description: "United States" } }), states, countries);
+					model = new Address($extend({}, data1, { state: { value: "Illinois", description: "Illinois" }, country: { value: "United States", description: "United States" } }), states, countries);
 				}, this);
 
 				describe("", function () {
@@ -146,7 +146,7 @@
 					});
 
 					describe("continue with", function () {
-						if (typeof continueWith === 'function')
+						if (typeof continueWith === "function")
 							continueWith();
 					});
 				});
@@ -176,7 +176,7 @@
 
 			describe("When creating a new address with validation disabled and required properties are missing values", function () {
 				beforeEach(function () {
-					model = new Address($.extend({}, data1, { address1: "" }), states, countries);
+					model = new Address($extend({}, data1, { address1: "" }), states, countries);
 				}, this);
 
 				it("should be valid", function () {
@@ -187,7 +187,7 @@
 
 			describe("When creating a new address with validation enabled and required properties are missing values", function () {
 				beforeEach(function () {
-					model = new Address($.extend({}, data1, { address1: "" }), states, countries, true);
+					model = new Address($extend({}, data1, { address1: "" }), states, countries, true);
 				}, this);
 
 				it("should not be valid", function () {
