@@ -5,7 +5,12 @@
   "main": "knockout.address.js",
   "scripts": {
     "lint": "eslint . --format=unix",
-    "prepublish": "npm run lint"
+    "prepublish": "npm run lint",
+    "devboiler": "grunt",
+    "build": "webpack --progress && npm run devboiler",
+    "watch": "webpack --progress --watch",
+    "serve": "http-server demos -p 1341 -o -c-1",
+    "start": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
@@ -24,13 +29,22 @@
   },
   "homepage": "https://github.com/civicsource/knockout-address#readme",
   "devDependencies": {
+    "babel-eslint": "6.x",
+    "bootstrap": "3.x",
+    "eslint": "2.x",
+    "eslint-plugin-filenames": "1.x",
+    "grunt": "1.x",
+    "grunt-cli": "1.x",
+    "grunt-contrib-copy": "1.x",
+    "http-server": "^0.9.0",
+    "jquery": "^3.0.0",
     "jquery-extend": "2.x",
-    "babel-eslint": "^6.0.4",
-    "eslint": "^2.13.1",
-    "eslint-plugin-filenames": "^1.0.0"    
+    "webpack": "1.x"
   },
   "dependencies": {
+    "html-loader": "^0.4.3",
     "knockout": "3.x",
+    "knockout-template-loader": "1.x",
     "knockout.punches": "0.5.x",
     "knockout.validation": "2.x",
     "lodash.compact": "3.x",
