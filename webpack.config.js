@@ -1,5 +1,3 @@
-const webpack = require("webpack");
-
 module.exports = {
 	entry: "./demos/index.js",
 	output: {
@@ -8,12 +6,12 @@ module.exports = {
 	},
 	resolve: {
 		extensions: [
-			'',
-			'.js'
+			"",
+			".js"
 		],
 		modulesDirectories: [
 			"node_modules"
-		],
+		]
 	},
 	module: {
 		loaders: []
