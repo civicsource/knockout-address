@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/civicsource/knockout-address.git"
+    "url": "git+https://github.com/civicsource/knockout.address.git"
   },
   "keywords": [
     "address",
@@ -26,9 +26,9 @@
   "author": "CivicSource",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/civicsource/knockout-address/issues"
+    "url": "https://github.com/civicsource/knockout.address/issues"
   },
-  "homepage": "https://github.com/civicsource/knockout-address#readme",
+  "homepage": "https://github.com/civicsource/knockout.address#readme",
   "devDependencies": {
     "babel-eslint": "6.x",
     "bootstrap": "3.x",
