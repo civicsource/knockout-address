@@ -2,7 +2,7 @@
 var ViewModel = require("../builder");
 var expect = require("chai").expect;
 
-describe("Address Builder ViewModel", function () {
+describe("Address Builder ViewModel", function() {
 
 
 	var data = {
@@ -17,12 +17,12 @@ describe("Address Builder ViewModel", function () {
 
 	var model;
 
-	describe("When creating a new model with address data", function () {
-		beforeEach(function () {
+	describe("When creating a new model with address data", function() {
+		beforeEach(function() {
 			model = new ViewModel({ address: data, instanceName: data.instanceName });
 		}, this);
 
-		it("should be populated with an address of observable values", function () {
+		it("should be populated with an address of observable values", function() {
 			expect(model.address().address1()).to.equal("950 Gravier");
 			expect(model.address().address2()).to.equal("1700");
 			expect(model.address().city()).to.equal("New Orleans");
@@ -31,12 +31,12 @@ describe("Address Builder ViewModel", function () {
 			expect(model.address().country()).to.equal("US");
 		}, this);
 
-		it("should have countries", function () {
-			expect(model.countries().length > 0).to.equal(true);
+		it("should have countries", function() {
+			expect(model.countries().length).to.be.greaterThan(0);
 		});
 
-		it("should have states", function () {
-			expect(model.states().length > 0).to.equal(true);
+		it("should have states", function() {
+			expect(model.states().length).to.be.greaterThan(0);
 		});
 
 	});

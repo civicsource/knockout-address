@@ -12,14 +12,15 @@ require("knockout-template?name=address-viewer!html!./templates/address-viewer.h
 ko.punches.enableAll();
 
 ko.bindingHandlers.addressBuilder = {
-	init: function (element) {
+	init: function(element) {
 		element.instanceName = _uniqueId("addy-build--");
 		return { controlsDescendantBindings: true };
 	},
-	update: function (element, valueAccessor, allBindings) {
+	update: function(element, valueAccessor, allBindings) {
 		var data = {};
 		data.address = valueAccessor();
 		data.instanceName = element.instanceName;
+		data.namePrefix = element.dataset.namePrefix;
 		data.displayOptions = ko.unwrap(allBindings.get("displayOptions"));
 		data.validate = ko.unwrap(allBindings.get("validate"));
 		var model = new Builder(data);
@@ -28,11 +29,11 @@ ko.bindingHandlers.addressBuilder = {
 };
 
 ko.bindingHandlers.addressViewer = {
-	init: function (element) {
+	init: function(element) {
 		element.instanceName = _uniqueId("addy-view--");
 		return { controlsDescendantBindings: true };
 	},
-	update: function (element, valueAccessor, allBindings) {
+	update: function(element, valueAccessor, allBindings) {
 		var data = {};
 		data.address = valueAccessor();
 		data.instanceName = element.instanceName;
@@ -43,18 +44,18 @@ ko.bindingHandlers.addressViewer = {
 	}
 };
 
-ko.extenders.address = function (target, defaultValue) {
+ko.extenders.address = function(target, defaultValue) {
 	var validate = (defaultValue && defaultValue.validate === true) || false;
 	var result = ko.computed({
-		read: function () {
+		read: function() {
 			return ko.unwrap(target) instanceof Address ? target : target(new Address(ko.unwrap(target), null, null, validate));
 		},
-		write: function (value) {
+		write: function(value) {
 			target(new Address(value, null, null, validate));
 		}
 	});
 
-	result.formatted = ko.computed(function () {
+	result.formatted = ko.computed(function() {
 		return !!target() && target().formatted ? target().formatted() : "";
 	});
 

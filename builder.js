@@ -11,7 +11,7 @@ function ViewModel(data) {
 	this.countries = ko.observableArray(componentData.countries);
 	this.instanceName = data.instanceName;
 	this.address = getObservableAddress(data.address, this.states, this.countries, !!data.validate);
-
+	this.namePrefix = data.namePrefix || "";
 }
 
 function initDisplayOptions(data) {

@@ -1,16 +1,18 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
 	<title>Address Builder Example</title>
 
 	<link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css">
 
 </head>
+
 <body>
 	<div class="container">
 		<h1>Address Builder Example</h1>
 		<h5>(start changing me to update the viewer)</h5>
-		<div class="well" data-bind="addressBuilder: address">
+		<div class="well" data-bind="addressBuilder: address" data-name-prefix="prefix_">
 		</div>
 	</div>
 
@@ -25,7 +27,8 @@
 		<pre class="well" data-bind="text: address2.formatted">
 		</pre>
 	</div>
-<script src="./jquery/dist/jquery.js" type="text/javascript"></script>	
-<script src="./build.js" type="text/javascript"></script>
+	<script src="./jquery/dist/jquery.js" type="text/javascript"></script>
+	<script src="./build.js" type="text/javascript"></script>
 </body>
+
 </html>
