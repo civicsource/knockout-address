@@ -4,3 +4,6 @@ node_modules
 demos/bootstrap
 demos/jquery
 build.js
+
+yarn-error.log
+yarn.lock

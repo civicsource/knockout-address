@@ -1,6 +1,6 @@
 {
   "name": "knockout.address",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "address bindings and extension for observable address objects",
   "main": "knockout.address.js",
   "scripts": {
@@ -29,6 +29,19 @@
     "url": "https://github.com/civicsource/knockout.address/issues"
   },
   "homepage": "https://github.com/civicsource/knockout.address#readme",
+  "dependencies": {
+    "html-loader": "^0.4.3",
+    "knockout.punches": "0.5.x",
+    "knockout.validation": "2.x",
+    "lodash.compact": "3.x",
+    "lodash.find": "4.x",
+    "lodash.remove": "4.x",
+    "lodash.result": "4.x",
+    "lodash.uniqueid": "4.x"
+  },
+  "peerDependencies": {
+    "knockout": "3.x"
+  },
   "devDependencies": {
     "babel-eslint": "6.x",
     "bootstrap": "3.x",
@@ -41,19 +54,8 @@
     "http-server": "0.9.x",
     "jquery": "^3.0.0",
     "jquery-extend": "2.x",
+    "knockout": "3.x",
     "mocha": "2.x",
     "webpack": "1.x"
-  },
-  "dependencies": {
-    "html-loader": "^0.4.3",
-    "knockout": "3.x",
-    "knockout-template-loader": "1.x",
-    "knockout.punches": "0.5.x",
-    "knockout.validation": "2.x",
-    "lodash.compact": "3.x",
-    "lodash.find": "4.x",
-    "lodash.remove": "4.x",
-    "lodash.result": "4.x",
-    "lodash.uniqueid": "4.x"
   }
 }
